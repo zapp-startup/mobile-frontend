@@ -1,0 +1,48 @@
+name: ZappApp
+options:
+  minimumXcodeGenVersion: 2.40.0
+configs:
+  Debug: debug
+  Release: release
+targets:
+  ZappApp:
+    type: application
+    platform: iOS
+    deploymentTarget: "17.0"
+    info:
+      properties:
+        CFBundleURLTypes:
+          - CFBundleURLName: com.zapp.mobile.oauth
+            CFBundleURLSchemes:
+              - zapp
+    sources:
+      - path: ZappApp
+    resources:
+      - path: ZappApp/Resources
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.zapp.mobile
+        PRODUCT_NAME: ZappApp
+        SWIFT_VERSION: 5.10
+        TARGETED_DEVICE_FAMILY: "1,2"
+        INFOPLIST_KEY_CFBundleDisplayName: ZappApp
+        INFOPLIST_KEY_UIApplicationSceneManifest_Generation: true
+        INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents: true
+        INFOPLIST_KEY_UILaunchScreen_Generation: true
+        INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone: UIInterfaceOrientationPortrait
+        INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad: UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight
+        GENERATE_INFOPLIST_FILE: YES
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        CODE_SIGN_STYLE: Automatic
+        DEVELOPMENT_TEAM: ""
+scheme:
+  ZappApp:
+    build:
+      targets:
+        ZappApp: all
+    run:
+      config: Debug
+    test:
+      config: Debug
+    archive:
+      config: Release

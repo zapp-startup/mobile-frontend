@@ -1,0 +1,30 @@
+# macOS
+.DS_Store
+
+# Xcode
+build/
+DerivedData/
+*.xcuserstate
+*.xcscmblueprint
+*.xccheckout
+xcuserdata/
+
+# Swift Package Manager
+.build/
+.swiftpm/
+Package.resolved
+
+# CocoaPods
+Pods/
+
+# Node (web prototype assets)
+node_modules/
+dist/
+
+# Environment / secrets
+.env
+.env.*
+
+# Cursor / local tooling
+.cursor/
+.tools/
