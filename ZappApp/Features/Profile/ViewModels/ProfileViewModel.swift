@@ -23,6 +23,7 @@ final class ProfileViewModel: ObservableObject {
         isLoading = true
         defer { isLoading = false }
         errorMessage = nil
+        successMessage = nil
         do {
             payload = try await service.fetchProfile()
         } catch {
@@ -32,44 +33,67 @@ final class ProfileViewModel: ObservableObject {
 
     func saveProfile() async {
         guard let profile = payload?.financialProfile else { return }
+        isLoading = true
+        defer { isLoading = false }
         do {
             let updated = try await service.saveFinancialProfile(profile)
             payload?.financialProfile = updated
-            if let fullName = payload?.user.fullName, !fullName.isEmpty {
-                payload?.user = try await service.updateProfileIdentity(fullName: fullName)
-            }
+            // Identity (name) PATCH intentionally omitted: there is no name-edit UI,
+            // so the name is always unchanged and PATCHing it is a wasted request.
+            // Re-add updateProfileIdentity here, guarded by a change comparison,
+            // once an editable name field exists. (DEFERRED)
             successMessage = "Profile saved."
+            errorMessage = nil
         } catch {
             errorMessage = error.localizedDescription
+            successMessage = nil
         }
     }
 
     func addPreference(key: String, value: String, category: String) async {
+        isLoading = true
+        defer { isLoading = false }
         do {
             let preference = try await service.addPreference(key: key, value: value, category: category)
             payload?.preferences.append(preference)
             successMessage = "Preference added."
+            errorMessage = nil
         } catch {
             errorMessage = error.localizedDescription
+            successMessage = nil
         }
     }
 
     func removePreference(_ preference: Preference) async {
+        isLoading = true
+        defer { isLoading = false }
         do {
             try await service.deletePreference(id: preference.id)
             payload?.preferences.removeAll { $0.id == preference.id }
             successMessage = "Preference removed."
+            errorMessage = nil
         } catch {
             errorMessage = error.localizedDescription
+            successMessage = nil
         }
     }
 
     func enrollMFA() async {
+        isLoading = true
+        defer { isLoading = false }
         do {
             let ok = try await service.enrollMFA()
-            successMessage = ok ? "MFA enrollment started." : "MFA enrollment unavailable."
+            if ok {
+                await load()
+                successMessage = "Enrollment started — check your authenticator app."
+                errorMessage = nil
+            } else {
+                errorMessage = "MFA enrollment unavailable."
+                successMessage = nil
+            }
         } catch {
             errorMessage = error.localizedDescription
+            successMessage = nil
         }
     }
 

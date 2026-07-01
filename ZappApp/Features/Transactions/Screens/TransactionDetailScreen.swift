@@ -26,21 +26,25 @@ struct TransactionDetailScreen: View {
                         }
                     }
                     ValueScoreBreakdownCard(valueScore: transaction.valueScore ?? 0, satisfaction: transaction.satisfaction)
-                    NavigationLink(value: TransactionsRoute.transactionForm(transaction.id)) {
-                        Text("Edit Transaction")
-                            .frame(maxWidth: .infinity)
-                            .padding()
-                            .background(AppColors.subtle)
-                            .cornerRadius(AppRadii.md)
-                    }
-                    AppButton(title: "Give Feedback") { showFeedbackSheet = true }
-                    Button("Delete Transaction") {
-                        Task {
-                            await transactionsViewModel.delete(transactionId: transaction.id)
-                            dismiss()
+                    if transaction.source != "bank" {
+                        NavigationLink(value: TransactionsRoute.transactionForm(transaction.id)) {
+                            Text("Edit Transaction")
+                                .frame(maxWidth: .infinity)
+                                .padding()
+                                .background(AppColors.subtle)
+                                .cornerRadius(AppRadii.md)
                         }
                     }
-                    .foregroundStyle(AppColors.error)
+                    AppButton(title: "Give Feedback") { showFeedbackSheet = true }
+                    if transaction.source != "bank" {
+                        Button("Delete Transaction") {
+                            Task {
+                                await transactionsViewModel.delete(transactionId: transaction.id)
+                                dismiss()
+                            }
+                        }
+                        .foregroundStyle(AppColors.error)
+                    }
                 } else {
                     AppLoadingState(title: "Loading detail", message: "Finding transaction record...")
                 }
@@ -53,6 +57,7 @@ struct TransactionDetailScreen: View {
             .sheet(isPresented: $showFeedbackSheet) {
                 TransactionFeedbackSheet { feedback in
                     Task {
+                        transactionsViewModel.selectedTransaction = detailViewModel.transaction
                         await transactionsViewModel.submitFeedback(feedback)
                         detailViewModel.bind(transactionId: transactionId, source: transactionsViewModel.transactions)
                     }

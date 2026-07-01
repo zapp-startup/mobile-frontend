@@ -60,6 +60,7 @@ struct TransactionsScreen: View {
                 }
             }
             .task { await viewModel.load() }
+            .onAppear { Task { await viewModel.load() } }
             .sheet(isPresented: $viewModel.showFilter) {
                 TransactionFilterSheet(
                     filter: $viewModel.filter,

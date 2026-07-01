@@ -3,6 +3,15 @@ import SwiftUI
 struct AssistantScreen: View {
     @Environment(\.dismiss) private var dismiss
     @StateObject private var viewModel = AssistantViewModel()
+    private let typingIndicatorID = "typing-indicator"
+
+    private func scrollToBottom(_ proxy: ScrollViewProxy) {
+        if viewModel.isTyping {
+            proxy.scrollTo(typingIndicatorID, anchor: .bottom)
+        } else if let lastID = viewModel.messages.last?.id {
+            proxy.scrollTo(lastID, anchor: .bottom)
+        }
+    }
 
     var body: some View {
         AppScreen {
@@ -19,18 +28,34 @@ struct AssistantScreen: View {
                         Task { await viewModel.load() }
                     }
                 } else {
-                    ScrollView {
-                        LazyVStack(spacing: AppSpacing.md) {
-                            ForEach(viewModel.messages) { message in
-                                MessageBubble(message: message) { action in
-                                    Task { await viewModel.sendQuickAction(action) }
+                    ScrollViewReader { proxy in
+                        ScrollView {
+                            LazyVStack(spacing: AppSpacing.md) {
+                                ForEach(viewModel.messages) { message in
+                                    MessageBubble(message: message) { action in
+                                        Task { await viewModel.sendQuickAction(action) }
+                                    }
+                                    .id(message.id)
+                                }
+                                if viewModel.isTyping {
+                                    TypingIndicator()
+                                        .id(typingIndicatorID)
                                 }
                             }
-                            if viewModel.isTyping {
-                                TypingIndicator()
-                            }
+                        }
+                        .onChange(of: viewModel.messages.count) { _ in
+                            withAnimation { scrollToBottom(proxy) }
+                        }
+                        .onChange(of: viewModel.isTyping) { _ in
+                            withAnimation { scrollToBottom(proxy) }
                         }
                     }
+                }
+
+                if let errorMessage = viewModel.errorMessage, !viewModel.messages.isEmpty {
+                    Text(errorMessage)
+                        .font(AppTypography.caption)
+                        .foregroundStyle(AppColors.error)
                 }
 
                 ComposerBar(text: $viewModel.draftMessage) {

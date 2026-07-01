@@ -80,7 +80,7 @@ struct HomeScreen: View {
 
             AppCard {
                 VStack(alignment: .leading, spacing: AppSpacing.md) {
-                    SectionHeader(title: "Recent Transactions", actionTitle: "See all") { }
+                    SectionHeader(title: "Recent Transactions")
                     if viewModel.recentTransactions.isEmpty {
                         AppEmptyState(title: "No transactions yet", message: "Your latest transactions will appear here.")
                             .frame(height: 120)

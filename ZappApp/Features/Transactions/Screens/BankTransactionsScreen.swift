@@ -8,7 +8,7 @@ struct BankTransactionsScreen: View {
         AppScreen {
             VStack(spacing: AppSpacing.lg) {
                 AppHeader(title: "Bank Transactions")
-                if let connectionId {
+                if connectionId != nil {
                     if viewModel.isLoading {
                         AppLoadingState(title: "Loading bank transactions", message: "Syncing linked activity.")
                     } else if let errorMessage = viewModel.errorMessage {

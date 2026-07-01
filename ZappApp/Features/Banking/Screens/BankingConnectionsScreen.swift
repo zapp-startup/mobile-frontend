@@ -38,7 +38,6 @@ struct BankingConnectionsScreen: View {
                                 NavigationLink(value: TransactionsRoute.bankConnectionDetail(connection.id)) {
                                     BankConnectionCard(
                                         connection: connection,
-                                        onTap: {},
                                         onSync: { Task { await viewModel.sync(connection: connection) } }
                                     )
                                 }
