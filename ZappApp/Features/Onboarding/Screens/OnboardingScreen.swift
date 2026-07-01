@@ -53,15 +53,15 @@ struct OnboardingScreen: View {
                 viewModel.lifeStage = value
             }
         case .householdSize:
-            AppInput(title: "Household size", value: $viewModel.householdSize)
+            AppInput(title: "Household size", value: $viewModel.householdSize, keyboardType: .numberPad)
         case .zipCode:
-            AppInput(title: "Zip code", value: $viewModel.zipCode)
+            AppInput(title: "Zip code", value: $viewModel.zipCode, keyboardType: .numberPad)
         case .incomeRange:
             OptionButtonGrid(options: viewModel.incomeOptions, selected: Set([viewModel.incomeRange].filter { !$0.isEmpty })) { value in
                 viewModel.incomeRange = value
             }
         case .monthlyFixedExpenses:
-            AppInput(title: "Monthly fixed expenses", value: $viewModel.monthlyFixedExpenses)
+            AppInput(title: "Monthly fixed expenses", value: $viewModel.monthlyFixedExpenses, keyboardType: .decimalPad)
         case .financialGoal:
             OptionButtonGrid(options: viewModel.financialGoals, selected: Set([viewModel.financialGoal].filter { !$0.isEmpty })) { value in
                 viewModel.financialGoal = value

@@ -21,7 +21,8 @@ final class SubscriptionFormViewModel: ObservableObject {
     }
 
     func build(existingId: UUID?) -> Subscription? {
-        guard !merchant.isEmpty, let amountValue = Double(amount), !startDate.isEmpty else {
+        let normalizedAmount = amount.replacingOccurrences(of: "$", with: "")
+        guard !merchant.isEmpty, let amountValue = Double(normalizedAmount), !startDate.isEmpty else {
             errorMessage = "Merchant, amount, and start date are required."
             return nil
         }
@@ -36,7 +37,7 @@ final class SubscriptionFormViewModel: ObservableObject {
             status: .active,
             startedAt: startDate,
             notes: notes,
-            valuation: SubscriptionValuation(valueScore: 75, explanation: "Usage and cost remain balanced.", confidence: 0.79)
+            valuation: nil
         )
     }
 }

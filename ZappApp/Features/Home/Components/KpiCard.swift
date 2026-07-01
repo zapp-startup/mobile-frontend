@@ -17,7 +17,7 @@ struct KpiCard: View {
                     .font(AppTypography.metric)
                 Text(delta)
                     .font(AppTypography.caption)
-                    .foregroundStyle(AppColors.accentGreen)
+                    .foregroundStyle(delta.hasPrefix("-") ? AppColors.error : AppColors.accentGreen)
             }
         }
     }

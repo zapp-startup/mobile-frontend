@@ -23,9 +23,18 @@ final class TargetsViewModel: ObservableObject {
         }
     }
 
-    func createSampleTarget() async {
+    func createTarget(title: String, targetValue: Double, unit: String = "USD") async {
+        let trimmedTitle = title.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !trimmedTitle.isEmpty else {
+            errorMessage = "Target title cannot be empty."
+            return
+        }
+        guard targetValue > 0 else {
+            errorMessage = "Target amount must be greater than zero."
+            return
+        }
         do {
-            let target = try await service.createTarget(title: "New Monthly Target", targetValue: 500, unit: "USD")
+            let target = try await service.createTarget(title: trimmedTitle, targetValue: targetValue, unit: unit)
             targets.insert(target, at: 0)
             successMessage = "Target created."
         } catch {

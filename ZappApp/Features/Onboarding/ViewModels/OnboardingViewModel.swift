@@ -121,9 +121,9 @@ final class OnboardingViewModel: ObservableObject {
         switch currentStep {
         case .lifeStage where lifeStage.isEmpty:
             errorMessage = "Select your life stage."
-        case .householdSize where Int(householdSize) == nil:
+        case .householdSize where (Int(householdSize) ?? 0) < 1:
             errorMessage = "Enter a valid household size."
-        case .zipCode where zipCode.count < 5:
+        case .zipCode where zipCode.count != 5 || Int(zipCode) == nil:
             errorMessage = "Enter a valid zip code."
         case .incomeRange where incomeRange.isEmpty:
             errorMessage = "Choose an income range."

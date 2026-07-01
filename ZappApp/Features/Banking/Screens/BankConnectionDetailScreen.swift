@@ -30,7 +30,7 @@ struct BankConnectionDetailScreen: View {
                     }
                     AppCard {
                         VStack(alignment: .leading, spacing: AppSpacing.sm) {
-                            SectionHeader(title: "Recent Bank Transactions", actionTitle: "See all") {}
+                            SectionHeader(title: "Recent Bank Transactions")
                             ForEach(payload.transactions.prefix(3)) { transaction in
                                 BankTransactionRow(transaction: transaction)
                             }

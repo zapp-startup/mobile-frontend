@@ -13,7 +13,7 @@ struct ReflectionDialog: View {
                 VStack(spacing: AppSpacing.lg) {
                     AppHeader(title: "Reflection")
                     SliderQuestion(title: "Regret score", value: $regretScore)
-                    SliderQuestion(title: "Satisfaction", value: $satisfaction)
+                    SliderQuestion(title: "Satisfaction", value: $satisfaction, range: 0...100)
                     AppTextarea(title: "Notes", value: $notes)
                     AppButton(title: "Save Reflection") {
                         onSave(TransactionFeedback(satisfaction: Int(satisfaction), regretScore: Int(regretScore), repurchaseLikelihood: nil, usageFrequency: nil, reflection: notes))

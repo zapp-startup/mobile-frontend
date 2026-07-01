@@ -19,6 +19,7 @@ struct AddPreferenceSheet: View {
                         onSave(key, value, category)
                         dismiss()
                     }
+                    .disabled(key.trimmingCharacters(in: .whitespaces).isEmpty || value.trimmingCharacters(in: .whitespaces).isEmpty)
                     Button("Cancel") { dismiss() }.foregroundStyle(AppColors.warning)
                     Spacer()
                 }

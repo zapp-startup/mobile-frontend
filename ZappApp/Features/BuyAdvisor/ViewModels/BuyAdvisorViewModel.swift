@@ -21,8 +21,8 @@ final class BuyAdvisorViewModel: ObservableObject {
     }
 
     func analyze() async {
-        guard let price = Double(predictedPrice), !category.isEmpty else {
-            errorMessage = "Price and category are required."
+        guard let price = Double(predictedPrice), price > 0, !category.isEmpty else {
+            errorMessage = "A positive price and a category are required."
             return
         }
         errorMessage = nil

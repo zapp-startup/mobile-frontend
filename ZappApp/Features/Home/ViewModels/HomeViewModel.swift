@@ -62,9 +62,9 @@ final class HomeViewModel: ObservableObject {
 
     var kpis: [HomeKPI] {
         [
-            HomeKPI(title: "Streak", value: "\(max(circles.first?.leaderboard.first?.score ?? 0, 7)) pts", delta: "+4%"),
-            HomeKPI(title: "Spent", value: currency(totalSpent), delta: "-3%"),
-            HomeKPI(title: "Income", value: currency(totalIncome), delta: "+2%")
+            HomeKPI(title: "Streak", value: "\(circles.first?.leaderboard.first?.score ?? 0) pts", delta: "—"),
+            HomeKPI(title: "Spent", value: currency(totalSpent), delta: "—"),
+            HomeKPI(title: "Income", value: currency(totalIncome), delta: "—")
         ]
     }
 

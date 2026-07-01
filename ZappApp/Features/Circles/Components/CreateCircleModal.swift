@@ -17,6 +17,7 @@ struct CreateCircleModal: View {
                         onCreate(name, isPrivate)
                         dismiss()
                     }
+                    .disabled(name.trimmingCharacters(in: .whitespaces).isEmpty)
                     Button("Cancel") { dismiss() }.foregroundStyle(AppColors.warning)
                     Spacer()
                 }

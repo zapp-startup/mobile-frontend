@@ -17,13 +17,11 @@ struct TransactionFilterSheet: View {
                     }
                     .pickerStyle(.menu)
 
-                    Picker("Type", selection: Binding(
-                        get: { filter.type ?? .expense },
-                        set: { filter.type = $0 }
-                    )) {
-                        ForEach(TransactionType.allCases, id: \.self) { Text($0.rawValue.capitalized).tag($0) }
+                    Picker("Type", selection: $filter.type) {
+                        Text("All").tag(TransactionType?.none)
+                        ForEach(TransactionType.allCases, id: \.self) { Text($0.rawValue.capitalized).tag(Optional($0)) }
                     }
-                    .pickerStyle(.segmented)
+                    .pickerStyle(.menu)
 
                     AppInput(title: "Date from (YYYY-MM-DD)", value: $filter.dateFrom)
                     AppInput(title: "Date to (YYYY-MM-DD)", value: $filter.dateTo)

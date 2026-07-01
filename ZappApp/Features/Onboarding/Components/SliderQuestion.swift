@@ -10,7 +10,7 @@ struct SliderQuestion: View {
             Text(title).font(AppTypography.helper).foregroundStyle(AppColors.textSecondary)
             Slider(value: $value, in: range, step: 1)
                 .tint(AppColors.accent)
-            Text("Selected: \(Int(value))/10").font(AppTypography.cardTitle)
+            Text("Selected: \(Int(value))/\(Int(range.upperBound))").font(AppTypography.cardTitle)
         }
     }
 }

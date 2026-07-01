@@ -1,22 +1,29 @@
 import SwiftUI
 
 enum AppTypography {
-    private static func inter(_ size: CGFloat, _ weight: Font.Weight) -> Font {
-        Font.custom("Inter", size: size).weight(weight)
+    // Native SF Pro. Rounded design + monospaced digits carry the "engineered numerals"
+    // signature on money/metrics; a real weight ladder (bold → semibold → regular → medium)
+    // gives hierarchy the old all-`.black` scale lacked. (Replaces the never-bundled "Inter".)
+    private static func rounded(_ size: CGFloat, _ weight: Font.Weight) -> Font {
+        Font.system(size: size, weight: weight, design: .rounded)
     }
 
-    static let pageTitle = inter(48, .black)
-    static let display = inter(40, .black)
-    static let screenTitle = inter(32, .black)
-    static let sectionTitle = inter(24, .black)
-    static let cardTitle = inter(18, .heavy)
-    static let body = inter(16, .regular)
-    static let helper = inter(14, .regular)
-    static let error = inter(14, .bold)
-    static let caption = inter(12, .medium)
-    static let metric = inter(36, .black)
+    private static func sans(_ size: CGFloat, _ weight: Font.Weight) -> Font {
+        Font.system(size: size, weight: weight, design: .default)
+    }
 
-    static let eyebrow = inter(10, .black)
-    static let label = inter(11, .heavy)
-    static let miniLabel = inter(10, .black)
+    static let pageTitle = rounded(34, .bold)
+    static let display = rounded(28, .bold)
+    static let screenTitle = rounded(26, .bold)
+    static let sectionTitle = rounded(20, .semibold)
+    static let cardTitle = sans(17, .semibold)
+    static let body = sans(16, .regular)
+    static let helper = sans(14, .regular)
+    static let error = sans(14, .semibold)
+    static let caption = sans(12, .medium)
+    static let metric = rounded(32, .bold).monospacedDigit()
+
+    static let eyebrow = sans(11, .semibold)
+    static let label = sans(12, .semibold)
+    static let miniLabel = sans(10, .semibold)
 }

@@ -30,6 +30,7 @@ final class MfaSetupViewModel: ObservableObject {
 
     func verify(onSuccess: @escaping () -> Void) async {
         errorMessage = nil
+        guard code.count == 6 else { errorMessage = "Enter the 6-digit code."; return }
         guard !factorID.isEmpty else {
             errorMessage = "Could not initialize MFA setup."
             return

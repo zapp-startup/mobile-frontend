@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 77;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,7 @@
 		04287F42CE086AF7B821FBB6 /* ReflectionDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5D2FE323CD4E9ABBB70A5A /* ReflectionDialog.swift */; };
 		051FED58DF5A2EA79096D9E5 /* TransactionFormScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8FC9019F641D14DB6FB37E /* TransactionFormScreen.swift */; };
 		0556C0DCE8F91DDFF72FAB63 /* CategoryBreakdownCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234212C8DA008D80D6E26CD5 /* CategoryBreakdownCard.swift */; };
+		06C5FDBA7C18D0ECBE4B0EA5 /* APIClientSmokeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B92FF5B3A41DA6F0ECE6E7B /* APIClientSmokeTests.swift */; };
 		071D8C1072409907FF6737EF /* BuyAdvisorModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00715A562A83EA7FCEAA723 /* BuyAdvisorModal.swift */; };
 		075570BD51C147303C1E307D /* CircleDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B90A4B2CA6B01B4D25BA93 /* CircleDetailScreen.swift */; };
 		07C36E9201555076E9EB9B02 /* SpendingCalendarCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A3E100FF59CE00D1C2CF0C /* SpendingCalendarCard.swift */; };
@@ -98,6 +99,7 @@
 		71D735E67F971868DA3C1E6B /* AppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0161A9E4226BD731F8352277 /* AppButton.swift */; };
 		732BA0DFEF36BA2E6D34685F /* MfaVerifyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306927732C5465365FD775C0 /* MfaVerifyViewModel.swift */; };
 		743521F10926C7D2CCFEDB69 /* AppErrorState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385DB64C5E9055A625F4A556 /* AppErrorState.swift */; };
+		76E64D5A0ECF9818491A5C2D /* CreateTargetModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D15E6A176863A655281727 /* CreateTargetModal.swift */; };
 		76FCAE6C32B53CA728374078 /* BankConsentModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF1A1594A6B22095247EDF2 /* BankConsentModal.swift */; };
 		77CB60ECE57ED1732FF78253 /* AssistantScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1C93BE1C2AC638C463B269 /* AssistantScreen.swift */; };
 		7A2972A67C6E80F1C586FA86 /* BadgeGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7B1CEE30531688C9888C93 /* BadgeGrid.swift */; };
@@ -110,6 +112,7 @@
 		8C6F3A8F66BB215EF29B1E9D /* BankTransactionsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36CD2F70D95BF14204F57525 /* BankTransactionsScreen.swift */; };
 		8C9303096055770D4C29DF38 /* SpotifyInsightsCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA603E14C4E8F4FD0E6DB84 /* SpotifyInsightsCard.swift */; };
 		8CBEF59D90096BC4192D40FE /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9CABAE7109622F17A8A93C /* Formatters.swift */; };
+		8DE9DDBB5C673350308FC4F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C7E606CBE8A64D36CD06774 /* Assets.xcassets */; };
 		90610A3A4560815C75BC8BB8 /* TransactionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1C2E54B037414C7F8C6399 /* TransactionsViewModel.swift */; };
 		9076DAE7F311126E9C08FAC0 /* MfaSetupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F34B453BB0A072DFD4674A /* MfaSetupViewModel.swift */; };
 		90BE79CB8CFB835BA747834A /* GamificationStrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59299651623DAF5D8E1FABA9 /* GamificationStrip.swift */; };
@@ -146,6 +149,7 @@
 		BC8D70F3C4BC5AE278B75741 /* SliderQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4472FA1A6129CF17EBD25553 /* SliderQuestion.swift */; };
 		C115DC3D0A9B2927E93501B3 /* BankingConnectionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB782EE1F06B3592AF6E7DB /* BankingConnectionsViewModel.swift */; };
 		C3D0EB8F2AC0C9466C55A523 /* TransactionFilterSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2D43AC26FDEF7053B9B706 /* TransactionFilterSheet.swift */; };
+		C4D1892FDC2D8F180B71BD06 /* URLProtocolStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8B82D97A20EB0CC34A49C2 /* URLProtocolStub.swift */; };
 		C8401969639EDA533E7AF4E8 /* BuyAdvisorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EA5EA1EB975C4AEF321498 /* BuyAdvisorViewModel.swift */; };
 		C8CAEC3F6DB8F810F70246DB /* BankConnectionDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426E2B74F34E5DAE03CBA45A /* BankConnectionDetailViewModel.swift */; };
 		CA46BCDE455AD134672FF011 /* ReviewsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526239A091F7A1737BB3DA5C /* ReviewsService.swift */; };
@@ -182,6 +186,16 @@
 		FE500E7B100FBF66F9B9DB7B /* TransactionFeedbackSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1D08B721020490556AEB64 /* TransactionFeedbackSheet.swift */; };
 		FFBF0A0DE9E5C20C4CFC7F98 /* JoinCircleModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = A078DC873AA4E70F15CB924F /* JoinCircleModal.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		705F239EF062EAC37DADAC2D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 56920244D59598292C012E74 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FA3C3390B3BA6FCD15B86D14;
+			remoteInfo = ZappApp;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		00866B0AD81791A19D2846D8 /* TransactionGroupSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionGroupSection.swift; sourceTree = "<group>"; };
@@ -230,15 +244,16 @@
 		391DC05BF8919C4DC5460C45 /* MfaSetupScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MfaSetupScreen.swift; sourceTree = "<group>"; };
 		39CAFA98BC20A0549C8D25AD /* ZappApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZappApp.swift; sourceTree = "<group>"; };
 		3B1C93BE1C2AC638C463B269 /* AssistantScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantScreen.swift; sourceTree = "<group>"; };
+		3B92FF5B3A41DA6F0ECE6E7B /* APIClientSmokeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientSmokeTests.swift; sourceTree = "<group>"; };
 		3BA603E14C4E8F4FD0E6DB84 /* SpotifyInsightsCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyInsightsCard.swift; sourceTree = "<group>"; };
 		3C344BD6B030F3310AC74C84 /* Preference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preference.swift; sourceTree = "<group>"; };
+		3C7E606CBE8A64D36CD06774 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F356B2EE49AEFAA02F1F207 /* MfaVerifyScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MfaVerifyScreen.swift; sourceTree = "<group>"; };
 		426E2B74F34E5DAE03CBA45A /* BankConnectionDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankConnectionDetailViewModel.swift; sourceTree = "<group>"; };
 		4472FA1A6129CF17EBD25553 /* SliderQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderQuestion.swift; sourceTree = "<group>"; };
 		46C9DEA494DBF523B73831A5 /* AppHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHeader.swift; sourceTree = "<group>"; };
 		48827E9295DF338EA0A4B750 /* MfaCodeField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MfaCodeField.swift; sourceTree = "<group>"; };
 		493E8E01FF10DE69A6359988 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
-		4962C01B2F90AD2D00A3EA64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		4B1DEADEF3BC9AB6F887B1D9 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		4D209EEF09A283FBF6C51E14 /* SubscriptionDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionDetailScreen.swift; sourceTree = "<group>"; };
 		5069876958ED12B81B65BEAE /* KpiCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KpiCard.swift; sourceTree = "<group>"; };
@@ -254,6 +269,7 @@
 		62E40681FA24D56284DCB7F8 /* SpotifyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyService.swift; sourceTree = "<group>"; };
 		650A10A157AA6929CD426050 /* BankTransactionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankTransactionRow.swift; sourceTree = "<group>"; };
 		69D46CAAEE37C679AF3E4AC6 /* SubscriptionDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionDetailViewModel.swift; sourceTree = "<group>"; };
+		6A8B82D97A20EB0CC34A49C2 /* URLProtocolStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolStub.swift; sourceTree = "<group>"; };
 		6B2F0DB412022A05F38DBD5B /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		6E01DFBD47570F34C9A2AAC0 /* SubscriptionValuationSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionValuationSection.swift; sourceTree = "<group>"; };
 		70B90A4B2CA6B01B4D25BA93 /* CircleDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleDetailScreen.swift; sourceTree = "<group>"; };
@@ -294,8 +310,9 @@
 		98A3E100FF59CE00D1C2CF0C /* SpendingCalendarCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingCalendarCard.swift; sourceTree = "<group>"; };
 		98F97E6EC3FDA0F130783AF4 /* BankConnectionDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankConnectionDetailScreen.swift; sourceTree = "<group>"; };
 		9937FE925E671BD223706B97 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		9C67DD11F238E3284C69496A /* ZappApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZappApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C67DD11F238E3284C69496A /* ZappApp.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = ZappApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A078DC873AA4E70F15CB924F /* JoinCircleModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinCircleModal.swift; sourceTree = "<group>"; };
+		A0D15E6A176863A655281727 /* CreateTargetModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTargetModal.swift; sourceTree = "<group>"; };
 		A3441FC33DE43E803928B6F6 /* SubscriptionFormScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionFormScreen.swift; sourceTree = "<group>"; };
 		A35414BEE09EBB7D0EECD6AE /* ValueScoreMeter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueScoreMeter.swift; sourceTree = "<group>"; };
 		A41A6E35D34E60A7E28B349C /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
@@ -311,6 +328,7 @@
 		B3D36520D328328FAB070BEF /* TransactionsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsService.swift; sourceTree = "<group>"; };
 		B5D4A398958CDC3CFD4A23B0 /* TransactionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRow.swift; sourceTree = "<group>"; };
 		B73382C2B5C693B2D546CBC2 /* SpotifyConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyConnection.swift; sourceTree = "<group>"; };
+		B91E0E4B3D5E636C61BA0576 /* ZappAppTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = ZappAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B92778C3DAACAB9ADE02FEEE /* SpotifyCallbackScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyCallbackScreen.swift; sourceTree = "<group>"; };
 		BB826E5371F97C9A0ABB6B97 /* MonthlyReviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyReviewViewModel.swift; sourceTree = "<group>"; };
 		BBFDB0D6ACA5D834E001302B /* TargetCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetCard.swift; sourceTree = "<group>"; };
@@ -328,6 +346,7 @@
 		CE9CABAE7109622F17A8A93C /* Formatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
 		CEE2DF6437D837C9EFCD8152 /* AnalyticsSummaryScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsSummaryScreen.swift; sourceTree = "<group>"; };
 		CF438C1C19D934CE49117745 /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
+		CFACB45B7CD55C624D5F1D4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D3E1722E0A1DF85DCDAFF3C6 /* ProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreen.swift; sourceTree = "<group>"; };
 		D65B5E30ECAC06C29FE2E811 /* StatusChip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusChip.swift; sourceTree = "<group>"; };
 		D733864B04B10E4E6174018B /* BadgesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgesScreen.swift; sourceTree = "<group>"; };
@@ -367,6 +386,7 @@
 			isa = PBXGroup;
 			children = (
 				8971A296C980B518EDC56C3B /* ZappApp */,
+				16FF4621FD18E64C5DC6C5E2 /* ZappAppTests */,
 				5C2C2713A020DD054F9C3982 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -413,6 +433,15 @@
 			path = Screens;
 			sourceTree = "<group>";
 		};
+		16FF4621FD18E64C5DC6C5E2 /* ZappAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				3B92FF5B3A41DA6F0ECE6E7B /* APIClientSmokeTests.swift */,
+				8A64EAA6D06BD6C451E590C0 /* Support */,
+			);
+			path = ZappAppTests;
+			sourceTree = "<group>";
+		};
 		1C8D3F734C3F5CF0C0FEB771 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
@@ -442,6 +471,7 @@
 				EF7B1CEE30531688C9888C93 /* BadgeGrid.swift */,
 				79D768241C58788DF3688755 /* CircleCard.swift */,
 				94D109E056D87C15AB9633F4 /* CreateCircleModal.swift */,
+				A0D15E6A176863A655281727 /* CreateTargetModal.swift */,
 				172965761D12ED6D0D61644F /* InviteCodeCard.swift */,
 				A078DC873AA4E70F15CB924F /* JoinCircleModal.swift */,
 				D7F7D401C54B8977EC44B062 /* LeaderboardRow.swift */,
@@ -459,6 +489,14 @@
 				4B1DEADEF3BC9AB6F887B1D9 /* SearchViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		210192FAF8695DB07B6E9339 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3C7E606CBE8A64D36CD06774 /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		26DEBBF29F9A026043D23447 /* Transactions */ = {
@@ -589,6 +627,7 @@
 			isa = PBXGroup;
 			children = (
 				9C67DD11F238E3284C69496A /* ZappApp.app */,
+				B91E0E4B3D5E636C61BA0576 /* ZappAppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -685,15 +724,24 @@
 		8971A296C980B518EDC56C3B /* ZappApp */ = {
 			isa = PBXGroup;
 			children = (
-				4962C01B2F90AD2D00A3EA64 /* Info.plist */,
+				CFACB45B7CD55C624D5F1D4A /* Info.plist */,
 				A6E68AF4932938DA8ACCB239 /* App */,
 				CBD6F1FFC46D16EDC209F909 /* Core */,
 				D0AA30FAF8601B64BD2D1894 /* Features */,
 				B00248BF62C2C69A09936C9C /* Models */,
 				94E82A96E318AED839E6F200 /* Networking */,
+				210192FAF8695DB07B6E9339 /* Resources */,
 				38C27B83E5FE45463D5BACC1 /* Services */,
 			);
 			path = ZappApp;
+			sourceTree = "<group>";
+		};
+		8A64EAA6D06BD6C451E590C0 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				6A8B82D97A20EB0CC34A49C2 /* URLProtocolStub.swift */,
+			);
+			path = Support;
 			sourceTree = "<group>";
 		};
 		8FCCAF6D68AC1D4A41A2E66C /* Analytics */ = {
@@ -980,17 +1028,38 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		7B16FB8599DDB80BA7027A5C /* ZappAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6A634457E861D3F92D962FAC /* Build configuration list for PBXNativeTarget "ZappAppTests" */;
+			buildPhases = (
+				0577BB458F7CD32834A5C019 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DBA1078516EBD5EB9C706AC0 /* PBXTargetDependency */,
+			);
+			name = ZappAppTests;
+			packageProductDependencies = (
+			);
+			productName = ZappAppTests;
+			productReference = B91E0E4B3D5E636C61BA0576 /* ZappAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		FA3C3390B3BA6FCD15B86D14 /* ZappApp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = BBECA71F30FAF34C2C6155BF /* Build configuration list for PBXNativeTarget "ZappApp" */;
 			buildPhases = (
 				2C86E51E99393637DB23F69D /* Sources */,
+				781ABCC36DDB94F733681165 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = ZappApp;
+			packageProductDependencies = (
+			);
 			productName = ZappApp;
 			productReference = 9C67DD11F238E3284C69496A /* ZappApp.app */;
 			productType = "com.apple.product-type.application";
@@ -1019,15 +1088,38 @@
 				en,
 			);
 			mainGroup = 05BB9DD92347B4BF1E9382C0;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				FA3C3390B3BA6FCD15B86D14 /* ZappApp */,
+				7B16FB8599DDB80BA7027A5C /* ZappAppTests */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		781ABCC36DDB94F733681165 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8DE9DDBB5C673350308FC4F8 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		0577BB458F7CD32834A5C019 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06C5FDBA7C18D0ECBE4B0EA5 /* APIClientSmokeTests.swift in Sources */,
+				C4D1892FDC2D8F180B71BD06 /* URLProtocolStub.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2C86E51E99393637DB23F69D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1097,6 +1189,7 @@
 				B1CABB2087A7ECD69D297306 /* Colors.swift in Sources */,
 				4CAA18D42C5B9E678A0252B3 /* ComposerBar.swift in Sources */,
 				F1365EAF1AE12DB4C92D02EF /* CreateCircleModal.swift in Sources */,
+				76E64D5A0ECF9818491A5C2D /* CreateTargetModal.swift in Sources */,
 				FA95C4F7D0FC0FA34203A0D6 /* DashboardHeroCard.swift in Sources */,
 				95B3DA0257EEABF98FAD0F18 /* DashboardService.swift in Sources */,
 				27357037BC2DB3BA75F491A6 /* Endpoint.swift in Sources */,
@@ -1211,6 +1304,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		DBA1078516EBD5EB9C706AC0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FA3C3390B3BA6FCD15B86D14 /* ZappApp */;
+			targetProxy = 705F239EF062EAC37DADAC2D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
 		44E188FBD858170515852293 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1280,12 +1381,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ZappApp/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = ZappApp;
-				INFOPLIST_KEY_CFBundleURLTypes = "([{CFBundleURLName=com.zapp.mobile.oauth;CFBundleURLSchemes=(zapp);},])";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1296,12 +1395,49 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.zapp.mobile;
 				PRODUCT_NAME = ZappApp;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.1;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		93058D801D1772489297D528 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zapp.mobile.tests;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZappApp.app/ZappApp";
+			};
+			name = Release;
+		};
+		BC7BDBE7D63F724EA1D5247F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zapp.mobile.tests;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZappApp.app/ZappApp";
 			};
 			name = Debug;
 		};
@@ -1366,12 +1502,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ZappApp/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = ZappApp;
-				INFOPLIST_KEY_CFBundleURLTypes = "([{CFBundleURLName=com.zapp.mobile.oauth;CFBundleURLSchemes=(zapp);},])";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1382,7 +1516,6 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.zapp.mobile;
 				PRODUCT_NAME = ZappApp;
 				SDKROOT = iphoneos;
@@ -1399,6 +1532,15 @@
 			buildConfigurations = (
 				44E188FBD858170515852293 /* Debug */,
 				C46A4652133D254E8D9D061D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		6A634457E861D3F92D962FAC /* Build configuration list for PBXNativeTarget "ZappAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC7BDBE7D63F724EA1D5247F /* Debug */,
+				93058D801D1772489297D528 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
