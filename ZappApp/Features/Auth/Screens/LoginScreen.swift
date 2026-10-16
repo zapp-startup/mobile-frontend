@@ -16,7 +16,7 @@ struct LoginScreen: View {
                             SocialAuthButton(title: "Continue with Google", isLoading: viewModel.isLoading) {
                                 Task { await viewModel.signInWithGoogle(onOAuthCallback: onOAuthCallback) }
                             }
-                            AppInput(title: "Email", value: $viewModel.email)
+                            AppInput(title: "Email", value: $viewModel.email, keyboardType: .emailAddress, autocapitalization: .never, disableAutocorrection: true, textContentType: .emailAddress)
                             AppInput(title: "Password", value: $viewModel.password, secure: true)
                             if let socialErrorMessage = viewModel.socialErrorMessage {
                                 Text(socialErrorMessage).font(AppTypography.caption).foregroundStyle(AppColors.warning)

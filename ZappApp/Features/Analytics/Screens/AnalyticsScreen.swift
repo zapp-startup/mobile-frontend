@@ -32,7 +32,7 @@ struct AnalyticsScreen: View {
                     MetricDrilldownCard(title: "Value Outputs", values: viewModel.result?.valueOutputs ?? [:])
                     InsightsListSection(insights: viewModel.result?.insights ?? [])
 
-                    if let errorMessage = viewModel.errorMessage {
+                    if let errorMessage = viewModel.errorMessage, !viewModel.metrics.isEmpty {
                         StatusChip(text: errorMessage, tone: AppColors.error)
                     }
                 }

@@ -23,6 +23,11 @@ final class SignUpViewModel: ObservableObject {
             errorMessage = "Passwords do not match."
             return
         }
+        guard !fullName.trimmingCharacters(in: .whitespaces).isEmpty,
+              !email.trimmingCharacters(in: .whitespaces).isEmpty,
+              !password.isEmpty else {
+            errorMessage = "Fill in your name, email, and password."; return
+        }
 
         isLoading = true
         defer { isLoading = false }

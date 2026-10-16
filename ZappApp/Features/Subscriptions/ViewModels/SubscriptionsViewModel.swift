@@ -16,6 +16,7 @@ final class SubscriptionsViewModel: ObservableObject {
     func load() async {
         isLoading = true
         errorMessage = nil
+        successMessage = nil
         defer { isLoading = false }
         do {
             async let subs = service.fetchSubscriptions()
@@ -41,15 +42,10 @@ final class SubscriptionsViewModel: ObservableObject {
 
     func save(_ subscription: Subscription) async {
         do {
-            let saved = try await service.saveSubscription(subscription)
+            _ = try await service.saveSubscription(subscription)
             try? await service.recomputeValueScores()
-            if let idx = subscriptions.firstIndex(where: { $0.id == saved.id }) {
-                subscriptions[idx] = saved
-            } else {
-                subscriptions.insert(saved, at: 0)
-            }
-            successMessage = "Subscription saved."
             await load()
+            successMessage = "Subscription saved."
         } catch {
             errorMessage = error.localizedDescription
         }

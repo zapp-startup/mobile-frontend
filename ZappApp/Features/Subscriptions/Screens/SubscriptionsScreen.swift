@@ -32,6 +32,10 @@ struct SubscriptionsScreen: View {
 
                 SpotifyInsightsCard(connection: spotifyViewModel.connection)
 
+                if let spotifyError = spotifyViewModel.errorMessage {
+                    StatusChip(text: spotifyError, tone: AppColors.error)
+                }
+
                 if let successMessage = viewModel.successMessage {
                     StatusChip(text: successMessage, tone: AppColors.success)
                 }
@@ -41,7 +45,7 @@ struct SubscriptionsScreen: View {
 
                 if viewModel.isLoading {
                     AppLoadingState(title: "Loading subscriptions", message: "Fetching recurring charges.")
-                } else if let errorMessage = viewModel.errorMessage ?? spotifyViewModel.errorMessage {
+                } else if let errorMessage = viewModel.errorMessage {
                     AppErrorState(title: "Subscription error", message: errorMessage) {
                         Task {
                             await viewModel.load()
@@ -67,6 +71,9 @@ struct SubscriptionsScreen: View {
             .task {
                 await viewModel.load()
                 await spotifyViewModel.load()
+            }
+            .onAppear {
+                Task { await viewModel.load() }
             }
         }
     }

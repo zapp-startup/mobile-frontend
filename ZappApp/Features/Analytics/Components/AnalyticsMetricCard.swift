@@ -8,7 +8,7 @@ struct AnalyticsMetricCard: View {
             VStack(alignment: .leading, spacing: AppSpacing.xs) {
                 Text(metric.title).font(AppTypography.helper).foregroundStyle(AppColors.textSecondary)
                 Text(metric.value).font(AppTypography.sectionTitle)
-                Text(metric.delta).font(AppTypography.caption).foregroundStyle(AppColors.success)
+                Text(metric.delta).font(AppTypography.caption).foregroundStyle(metric.delta == "No data" ? AppColors.textMuted : AppColors.success)
             }
         }
     }

@@ -49,7 +49,8 @@ final class TransactionsViewModel: ObservableObject {
             let matchesSearch = searchText.isEmpty || tx.description.localizedCaseInsensitiveContains(searchText) || tx.merchant.localizedCaseInsensitiveContains(searchText)
             let matchesCategory = filter.category.isEmpty || tx.category == filter.category
             let matchesType = filter.type == nil || tx.type == filter.type
-            return matchesSearch && matchesCategory && matchesType
+            let matchesDate = (filter.dateFrom.isEmpty || tx.date >= filter.dateFrom) && (filter.dateTo.isEmpty || tx.date <= filter.dateTo)
+            return matchesSearch && matchesCategory && matchesType && matchesDate
         }
     }
 

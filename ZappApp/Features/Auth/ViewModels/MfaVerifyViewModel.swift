@@ -28,6 +28,7 @@ final class MfaVerifyViewModel: ObservableObject {
 
     func verify(onSuccess: @escaping (AuthStateResponse) -> Void) async {
         errorMessage = nil
+        guard code.count == 6 else { errorMessage = "Enter the 6-digit code."; return }
         guard let selectedFactor else {
             errorMessage = "Select an MFA factor."
             return

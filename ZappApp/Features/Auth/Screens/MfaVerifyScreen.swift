@@ -11,7 +11,6 @@ struct MfaVerifyScreen: View {
                     AppHeader(title: "Verify MFA", subtitle: "Choose your factor and continue.")
                     AuthCard(title: "Verification", subtitle: "Enter the current code from your authenticator app.") {
                         VStack(spacing: AppSpacing.md) {
-                            AppSelect(title: "Factor", value: viewModel.selectedFactor?.displayName ?? "Select factor")
                             if !viewModel.factors.isEmpty {
                                 Picker("Factor", selection: Binding(
                                     get: { viewModel.selectedFactor?.id ?? viewModel.factors.first?.id ?? "" },

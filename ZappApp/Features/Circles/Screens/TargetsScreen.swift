@@ -2,6 +2,7 @@ import SwiftUI
 
 struct TargetsScreen: View {
     @StateObject private var viewModel = TargetsViewModel()
+    @State private var showCreateTarget = false
 
     var body: some View {
         AppScreen {
@@ -29,11 +30,16 @@ struct TargetsScreen: View {
                     StatusChip(text: successMessage, tone: AppColors.success)
                 }
                 AppButton(title: "Create Target") {
-                    Task { await viewModel.createSampleTarget() }
+                    showCreateTarget = true
                 }
                 Spacer()
             }
             .task { await viewModel.load() }
+            .sheet(isPresented: $showCreateTarget) {
+                CreateTargetModal { title, amount in
+                    Task { await viewModel.createTarget(title: title, targetValue: amount) }
+                }
+            }
         }
     }
 }

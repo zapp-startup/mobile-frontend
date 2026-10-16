@@ -2,7 +2,6 @@ import SwiftUI
 
 struct BankConnectionCard: View {
     let connection: BankConnection
-    var onTap: () -> Void
     var onSync: () -> Void
 
     var body: some View {
@@ -16,10 +15,9 @@ struct BankConnectionCard: View {
                 Text("Last synced: \(connection.lastSyncedAt ?? "Never")")
                     .font(AppTypography.caption)
                     .foregroundStyle(AppColors.textSecondary)
-                HStack {
-                    Button("View Detail", action: onTap).foregroundStyle(AppColors.accent)
-                    Spacer()
-                    if connection.canSync {
+                if connection.canSync {
+                    HStack {
+                        Spacer()
                         Button("Sync Now", action: onSync).foregroundStyle(AppColors.accent)
                     }
                 }

@@ -24,7 +24,7 @@ struct SpotifyCallbackScreen: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .task {
                 await viewModel.resolveCallback()
-                hasError = viewModel.connection == nil
+                hasError = viewModel.connection?.status != .connected
                 isComplete = !hasError
                 try? await Task.sleep(nanoseconds: 700_000_000)
                 dismiss()

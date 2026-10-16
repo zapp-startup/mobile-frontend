@@ -15,6 +15,7 @@ struct JoinCircleModal: View {
                         onJoin(inviteCode)
                         dismiss()
                     }
+                    .disabled(inviteCode.trimmingCharacters(in: .whitespaces).isEmpty)
                     Button("Cancel") { dismiss() }.foregroundStyle(AppColors.warning)
                     Spacer()
                 }

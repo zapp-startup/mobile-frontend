@@ -23,8 +23,13 @@ final class TransactionFormViewModel: ObservableObject {
     }
 
     func build(existingId: String?) -> Transaction? {
-        guard let amountValue = Double(amount), !description.isEmpty, !merchant.isEmpty, !category.isEmpty, !date.isEmpty else {
+        let now = ISO8601DateFormatter().string(from: Date())
+        guard !description.isEmpty, !merchant.isEmpty, !category.isEmpty, !date.isEmpty else {
             errorMessage = "Please complete all required fields."
+            return nil
+        }
+        guard let amountValue = Double(amount), amountValue > 0 else {
+            errorMessage = "Enter a positive amount."
             return nil
         }
         errorMessage = nil
@@ -41,8 +46,8 @@ final class TransactionFormViewModel: ObservableObject {
             satisfaction: Int(satisfaction),
             feedback: nil,
             source: "manual",
-            createdAt: MockSeed.isoNow,
-            updatedAt: MockSeed.isoNow,
+            createdAt: now,
+            updatedAt: now,
             backendDirection: type.rawValue,
             paymentChannel: "card"
         )

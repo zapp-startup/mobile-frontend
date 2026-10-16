@@ -12,7 +12,7 @@ struct SubscriptionFormScreen: View {
                 VStack(spacing: AppSpacing.lg) {
                     AppHeader(title: subscriptionId == nil ? "Add Subscription" : "Edit Subscription")
                     AppInput(title: "Merchant", value: $formViewModel.merchant)
-                    AppInput(title: "Amount", value: $formViewModel.amount)
+                    AppInput(title: "Amount", value: $formViewModel.amount, keyboardType: .decimalPad)
                     Picker("Billing Cycle", selection: $formViewModel.cycle) {
                         ForEach(BillingCycle.allCases, id: \.self) { Text($0.rawValue.capitalized).tag($0) }
                     }

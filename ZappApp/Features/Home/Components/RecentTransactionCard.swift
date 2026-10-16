@@ -22,6 +22,6 @@ struct RecentTransactionCard: View {
 
     private var amountText: String {
         let amount = Formatters.currency.string(from: NSNumber(value: transaction.amount)) ?? "$0.00"
-        return transaction.type == .expense ? "-\(amount)" : amount
+        return transaction.type.isExpense ? "-\(amount)" : amount
     }
 }

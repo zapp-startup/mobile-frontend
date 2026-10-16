@@ -1,9 +1,14 @@
 import SwiftUI
+import UIKit
 
 struct AppInput: View {
     let title: String
     @Binding var value: String
     var secure = false
+    var keyboardType: UIKeyboardType = .default
+    var autocapitalization: TextInputAutocapitalization = .sentences
+    var disableAutocorrection = false
+    var textContentType: UITextContentType? = nil
 
     var body: some View {
         VStack(alignment: .leading, spacing: AppSpacing.xs) {
@@ -16,6 +21,10 @@ struct AppInput: View {
                 if secure { SecureField(title, text: $value) }
                 else { TextField(title, text: $value) }
             }
+            .keyboardType(keyboardType)
+            .textInputAutocapitalization(autocapitalization)
+            .autocorrectionDisabled(disableAutocorrection)
+            .textContentType(textContentType)
             .font(AppTypography.body)
             .padding(.horizontal, AppSpacing.controlX)
             .padding(.vertical, AppSpacing.controlY)

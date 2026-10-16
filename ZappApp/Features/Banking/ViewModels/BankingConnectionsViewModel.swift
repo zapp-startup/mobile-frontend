@@ -34,11 +34,7 @@ final class BankingConnectionsViewModel: ObservableObject {
     }
 
     func connectBank() async {
-        do {
-            showConsentModal = true
-        } catch {
-            errorMessage = error.localizedDescription
-        }
+        showConsentModal = true
     }
 
     func submitConsent() async {
@@ -66,6 +62,7 @@ final class BankingConnectionsViewModel: ObservableObject {
             _ = try await AuthService().verifyMFAChallenge(factorId: factorId, challengeId: challenge.challengeId, code: code)
             showMFAModal = false
             syncStatusMessage = "MFA verified. Continue bank linking."
+            await submitConsent()
         } catch {
             errorMessage = error.localizedDescription
         }

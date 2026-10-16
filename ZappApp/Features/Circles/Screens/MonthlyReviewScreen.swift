@@ -12,7 +12,7 @@ struct MonthlyReviewScreen: View {
                     if viewModel.isLoading {
                         AppLoadingState(title: "Loading monthly review", message: "Preparing monthly reflection prompts.")
                     } else if let errorMessage = viewModel.errorMessage {
-                        AppErrorState(title: "Review Error", message: errorMessage, retry: nil)
+                        AppErrorState(title: "Review Error", message: errorMessage, retry: { Task { await viewModel.load() } })
                     } else if let review = viewModel.review {
                         AppCard {
                             HStack {

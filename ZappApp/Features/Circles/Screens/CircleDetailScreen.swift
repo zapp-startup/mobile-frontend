@@ -12,7 +12,13 @@ struct CircleDetailScreen: View {
                 VStack(spacing: AppSpacing.lg) {
                     AppHeader(title: "Circle Detail")
                     if let errorMessage = detailViewModel.errorMessage {
-                        AppErrorState(title: "Circle unavailable", message: errorMessage, retry: nil)
+                        AppErrorState(title: "Circle unavailable", message: errorMessage, retry: {
+                            Task {
+                                detailViewModel.errorMessage = nil
+                                await listViewModel.load()
+                                detailViewModel.bind(circleId: circleId, source: listViewModel.circles)
+                            }
+                        })
                     } else if let circle = detailViewModel.circle {
                         InviteCodeCard(inviteCode: circle.inviteCode)
                         AppCard {

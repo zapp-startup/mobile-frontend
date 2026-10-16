@@ -21,6 +21,10 @@ final class LoginViewModel: ObservableObject {
 
     func signIn(onSuccess: @escaping (AuthStateResponse) -> Void) async {
         errorMessage = nil
+        didSucceed = false
+        guard !email.trimmingCharacters(in: .whitespaces).isEmpty, !password.isEmpty else {
+            errorMessage = "Enter your email and password."; return
+        }
         isLoading = true
         defer { isLoading = false }
 

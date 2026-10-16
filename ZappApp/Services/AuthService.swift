@@ -49,7 +49,7 @@ final class AuthService {
     func signUp(fullName: String, email: String, password: String) async throws -> AuthStateResponse {
         let response: SignupResponse = try await apiClient.request(
             Endpoint.post("/api/auth/signup/"),
-            body: SignupRequest(email: email, password: password)
+            body: SignupRequest(name: fullName, email: email, password: password)
         )
         guard response.requiresVerification != true else {
             throw APIError.server(statusCode: 400, message: response.detail ?? "Email verification required before signing in.")
@@ -206,6 +206,7 @@ struct LoginRequest: Encodable {
 }
 
 struct SignupRequest: Encodable {
+    let name: String
     let email: String
     let password: String
 }

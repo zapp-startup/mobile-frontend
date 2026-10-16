@@ -15,6 +15,7 @@ struct ComposerBar: View {
                         .stroke(AppColors.borderStrong, lineWidth: 1)
                 )
                 .cornerRadius(AppRadii.md)
+                .onSubmit(onSend)
             Button(action: onSend) {
                 Image(systemName: "paperplane.fill")
                     .foregroundStyle(AppColors.textInverse)
@@ -26,6 +27,7 @@ struct ComposerBar: View {
                     .shadow(color: AppColors.accentCyan.opacity(0.4), radius: 12, x: 0, y: 0)
                     .clipShape(SwiftUI.Circle())
             }
+            .disabled(text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
         }
     }
 }

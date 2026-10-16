@@ -6,7 +6,7 @@ struct BuyAdvisorInputStep: View {
     var body: some View {
         VStack(spacing: AppSpacing.lg) {
             AppHeader(title: "Buy Advisor", subtitle: "Input your predicted purchase details.")
-            AppInput(title: "Predicted price", value: $viewModel.predictedPrice)
+            AppInput(title: "Predicted price", value: $viewModel.predictedPrice, keyboardType: .decimalPad)
             AppInput(title: "Target category", value: $viewModel.category)
             if let errorMessage = viewModel.errorMessage {
                 Text(errorMessage).font(AppTypography.caption).foregroundStyle(AppColors.error)

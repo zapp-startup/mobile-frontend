@@ -12,8 +12,8 @@ struct SignUpScreen: View {
                     AppHeader(title: "Zapp", subtitle: "Create your account")
                     AuthCard(title: "Create your account", subtitle: "Set up secure credentials to continue.") {
                         VStack(spacing: AppSpacing.md) {
-                            AppInput(title: "Full name", value: $viewModel.fullName)
-                            AppInput(title: "Email", value: $viewModel.email)
+                            AppInput(title: "Full name", value: $viewModel.fullName, textContentType: .name)
+                            AppInput(title: "Email", value: $viewModel.email, keyboardType: .emailAddress, autocapitalization: .never, disableAutocorrection: true, textContentType: .emailAddress)
                             AppInput(title: "Password", value: $viewModel.password, secure: true)
                             AppInput(title: "Confirm password", value: $viewModel.confirmPassword, secure: true)
                             if let errorMessage = viewModel.errorMessage {

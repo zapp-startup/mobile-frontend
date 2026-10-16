@@ -20,13 +20,5 @@ struct OptionButtonGrid: View {
                 .buttonStyle(.plain)
             }
         }
-        .overlay(alignment: .bottomLeading) {
-            if allowsMultiple {
-                Text("Choose up to 3 options.")
-                    .font(AppTypography.caption)
-                    .foregroundStyle(AppColors.textSecondary)
-                    .padding(.top, 56)
-            }
-        }
     }
 }

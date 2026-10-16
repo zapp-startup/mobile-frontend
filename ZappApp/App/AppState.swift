@@ -42,7 +42,7 @@ final class AppState: ObservableObject {
         Task {
             do {
                 let session = try await authService.bootstrapSession()
-                let isOnboardingCompleted = try await onboardingService.checkCompleted()
+                let isOnboardingCompleted = (try? await onboardingService.checkCompleted()) ?? session.onboardingCompleted
                 await MainActor.run {
                     applyAuthState(session, onboardingCompletedOverride: isOnboardingCompleted)
                     isLoading = false
@@ -59,10 +59,6 @@ final class AppState: ObservableObject {
                 }
             }
         }
-    }
-
-    func loginMockUser() {
-        applyAuthenticatedSession(user: MockSeed.sharedUser, token: nil)
     }
 
     func applyAuthenticatedSession(user: User, token: String?) {

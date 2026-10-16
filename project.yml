@@ -10,6 +10,7 @@ targets:
     platform: iOS
     deploymentTarget: "17.0"
     info:
+      path: ZappApp/Info.plist
       properties:
         CFBundleURLTypes:
           - CFBundleURLName: com.zapp.mobile.oauth
@@ -35,14 +36,30 @@ targets:
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
         CODE_SIGN_STYLE: Automatic
         DEVELOPMENT_TEAM: ""
+  ZappAppTests:
+    type: bundle.unit-test
+    platform: iOS
+    deploymentTarget: "17.0"
+    sources:
+      - path: ZappAppTests
+    dependencies:
+      - target: ZappApp
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.zapp.mobile.tests
+        GENERATE_INFOPLIST_FILE: YES
+        SWIFT_VERSION: 5.10
 scheme:
   ZappApp:
     build:
       targets:
         ZappApp: all
+        ZappAppTests: [test]
     run:
       config: Debug
     test:
       config: Debug
+      targets:
+        - ZappAppTests
     archive:
       config: Release
